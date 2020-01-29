@@ -27,7 +27,7 @@
 \begin{document}
 
 \begin{enumerate}
-    \item $$ \lim_{n\to\infty} \frac{n!}{n^{n+(1/2)}}e^{-n} = \lim_{n\to\infty} \frac{n!}{n^{n}} * \frac{1}{n^{1/2}} * e^{-n} = \lim_{n\to\infty} \frac{n}{n} * \frac{n-1}{n} * \frac{n-2}{n} * \frac{n-3}{n} ... \frac{1}{n} * \frac{1}{n^{1/2}} * e^{-n} $$
+    \item $$ \lim_{n\to\infty} \frac{n!}{n^{n+(1/2)}}e^{-n} = \lim_{n\to\infty} \frac{n!}{n^{n}} \cdot \frac{1}{n^{1/2}} \cdot e^{-n} = \lim_{n\to\infty} \frac{n}{n} \cdot \frac{n-1}{n} \cdot \frac{n-2}{n} \cdot \frac{n-3}{n} ... \frac{1}{n} \cdot \frac{1}{n^{1/2}} \cdot e^{-n} $$
 
     $$ \text{Note as } {n\to\infty}, \frac{n}{n} = 1, \frac{n-1}{n}\to 1...\frac{1}{n}\to 0, \text{ and } \frac{1}{n^{1/2}} \to 0, e^{-n} \to 0 $$
     
@@ -68,29 +68,25 @@
     
     \item An exponential random variable with parameter $ \lambda $ has the PDF of $ \lambda e^{-\lambda x}, x \geq 0 $.
     
-    Note for the first moment:
+    Note for the 1st moment:
     
     $$ E[X] = \int_{0}^{\infty} x \lambda e^{-\lambda x} dx = \frac{1}{\lambda} $$
     
-    Find the third moment:
+    Also for the 2nd moment, using integration by parts and reusing the result for the 1st moment:
     
-    $$ E[X^3] = \int_{0}^{\infty} x^3 \lambda e^{-\lambda x} dx $$
+    $$ E[X^2] = \int_{0}^{\infty} x^2 \lambda e^{-\lambda x} dx = -x^2 e^{-\lambda x}\Big|_{0}^{\infty} + \int_{0}^{\infty} 2x e^{-\lambda x} dx = 0 + \frac{2}{\lambda} \int_{0}^{\infty} x \lambda e^{-\lambda x} dx = \frac{2}{\lambda} \cdot \frac{1}{\lambda} = \frac{2}{\lambda^2} $$
+
+    Find the 3rd moment, using integration by parts and reusing the result from the 2nd moment:
     
-    Use integration by parts:
+    $$ E[X^3] = \int_{0}^{\infty} x^3 \lambda e^{-\lambda x} dx = -x^3 e^{-\lambda x}\Big|_{0}^{\infty} + \int_{0}^{\infty} 3x^2 e^{-\lambda x} dx =  0 + \frac{3}{\lambda} \int_{0}^{\infty} x^2 \lambda e^{-\lambda x} dx = \frac{3}{\lambda} \cdot \frac{2}{\lambda^2} = \frac{6}{\lambda^3} $$
     
-    $$ \int_{0}^{\infty} x^3 \lambda e^{-\lambda x} dx = -x^3 e^{-\lambda x}\big|_{\infty}^{0} + \int_{0}^{\infty} 3x^2 e^{-\lambda x} dx $$
+    Find the 4th moment, using integration by parts and reusing the result from the 3rd moment:
     
-    $$ = -x^3 e^{-\lambda x}\big|_{\infty}^{0} - \frac{3}{\lambda} x^2 e^{-\lambda x}\big|_{\infty}^{0} + \int_{0}^{\infty} \frac{6}{\lambda} x e^{-\lambda x} dx $$
+    $$ E[X^4] = \int_{0}^{\infty} x^4 \lambda e^{-\lambda x} dx  = -x^4 e^{-\lambda x}\Big|_{0}^{\infty} + \int_{0}^{\infty} 4 x^3 e^{-\lambda x} dx  =   0 + \frac{4}{\lambda} \int_{0}^{\infty} x^3 \lambda e^{-\lambda x} dx = \frac{4}{\lambda} \cdot \frac{6}{\lambda^3} = \frac{24}{\lambda^4} $$
     
-    $$ = -x^3 e^{-\lambda x}\big|_{\infty}^{0} - \frac{3}{\lambda} x^2 e^{-\lambda x}\big|_{\infty}^{0} + \frac{6}{\lambda^2} \int_{0}^{\infty} x \lambda e^{-\lambda x} dx $$
+    Find the 5th moment, using integration by parts and reusing the result from the 4th moment:
     
-    $$ = -x^3 e^{-\lambda x}\big|_{\infty}^{0} - \frac{3}{\lambda} x^2 e^{-\lambda x}\big|_{\infty}^{0} + \frac{6}{\lambda^3} $$
-    
-    Find the fourth moment:
-    
-    $$ E[X^4] = \int_{0}^{\infty} x^4 \lambda e^{-\lambda x} dx $$
-    
-    Find the fifth moment:
+    $$ E[X^5] = \int_{0}^{\infty} x^5 \lambda e^{-\lambda x} dx  = -x^5 e^{-\lambda x}\Big|_{0}^{\infty} + \int_{0}^{\infty} 5 x^4 e^{-\lambda x} dx  =   0 + \frac{5}{\lambda} \int_{0}^{\infty} x^4 \lambda e^{-\lambda x} dx = \frac{5}{\lambda} \cdot \frac{24}{\lambda^3} = \frac{120}{\lambda^5} $$
     
     $$ E[X^5] = \int_{0}^{\infty} x^5 \lambda e^{-\lambda x} dx $$
     
