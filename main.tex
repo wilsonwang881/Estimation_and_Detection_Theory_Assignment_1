@@ -64,9 +64,35 @@
     
     \item
     
-    \item
+    \item 
     
-    \item
+    \item An exponential random variable with parameter $ \lambda $ has the PDF of $ \lambda e^{-\lambda x}, x \geq 0 $.
+    
+    Note for the first moment:
+    
+    $$ E[X] = \int_{0}^{\infty} x \lambda e^{-\lambda x} dx = \frac{1}{\lambda} $$
+    
+    Find the third moment:
+    
+    $$ E[X^3] = \int_{0}^{\infty} x^3 \lambda e^{-\lambda x} dx $$
+    
+    Use integration by parts:
+    
+    $$ \int_{0}^{\infty} x^3 \lambda e^{-\lambda x} dx = -x^3 e^{-\lambda x}\big|_{\infty}^{0} + \int_{0}^{\infty} 3x^2 e^{-\lambda x} dx $$
+    
+    $$ = -x^3 e^{-\lambda x}\big|_{\infty}^{0} - \frac{3}{\lambda} x^2 e^{-\lambda x}\big|_{\infty}^{0} + \int_{0}^{\infty} \frac{6}{\lambda} x e^{-\lambda x} dx $$
+    
+    $$ = -x^3 e^{-\lambda x}\big|_{\infty}^{0} - \frac{3}{\lambda} x^2 e^{-\lambda x}\big|_{\infty}^{0} + \frac{6}{\lambda^2} \int_{0}^{\infty} x \lambda e^{-\lambda x} dx $$
+    
+    $$ = -x^3 e^{-\lambda x}\big|_{\infty}^{0} - \frac{3}{\lambda} x^2 e^{-\lambda x}\big|_{\infty}^{0} + \frac{6}{\lambda^3} $$
+    
+    Find the fourth moment:
+    
+    $$ E[X^4] = \int_{0}^{\infty} x^4 \lambda e^{-\lambda x} dx $$
+    
+    Find the fifth moment:
+    
+    $$ E[X^5] = \int_{0}^{\infty} x^5 \lambda e^{-\lambda x} dx $$
     
     \item \begin{enumerate}
         \item 
