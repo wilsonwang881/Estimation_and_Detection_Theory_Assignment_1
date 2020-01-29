@@ -1,0 +1,80 @@
+\documentclass[11pt,letterpaper,titlepage]{article}
+
+\usepackage{geometry}
+\geometry{left=1.5cm,right=1.5cm,top=1.5cm,bottom=2.5cm}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{fancyhdr}
+
+\usepackage{amsmath}
+
+\usepackage{booktabs}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{}
+\lfoot{ECEN 662 Estimation and Detection Theory}
+\cfoot{\thepage}
+\rfoot{@Lei Wang}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headwidth}{\textwidth}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\RomanNumeralCaps}[1]
+    {\MakeUppercase{\romannumeral #1}}
+
+\begin{document}
+
+\begin{enumerate}
+    \item $$ \lim_{n\to\infty} \frac{n!}{n^{n+(1/2)}}e^{-n} = \lim_{n\to\infty} \frac{n!}{n^{n}} * \frac{1}{n^{1/2}} * e^{-n} = \lim_{n\to\infty} \frac{n}{n} * \frac{n-1}{n} * \frac{n-2}{n} * \frac{n-3}{n} ... \frac{1}{n} * \frac{1}{n^{1/2}} * e^{-n} $$
+
+    $$ \text{Note as } {n\to\infty}, \frac{n}{n} = 1, \frac{n-1}{n}\to 1...\frac{1}{n}\to 0, \text{ and } \frac{1}{n^{1/2}} \to 0, e^{-n} \to 0 $$
+    
+    $$ \text{therefore } \lim_{n\to\infty} \frac{n!}{n^{n+(1/2)}}e^{-n} = 0 $$
+    
+    \item \begin{enumerate}
+        \item Drawing the numbers with replacement means that if there were $ n $ numbers, a total number of $ n^n $ drawing scenarios can be reached: $ n $ positions in a draw, each with $ n $ choices. Hence $ n^n $ scenarios.
+        
+        \begin{table}[ht]
+        \centering
+        \begin{tabular}{@{}lcc@{}}
+        \toprule
+        Scenario & Number of appearance & Probability associated with the draw average \\ \midrule
+        No repeated number         &    $ n! $                   &   $ \frac{n!}{n^n} $                                           \\ \midrule
+        One repeated number         &      $ \frac{n!}{2!} $                 &              $ \frac{n!}{2!n^n} $                                \\ \midrule
+        m repeated number         &     $ \frac{n!}{(m+1)!} $                 &           $ \frac{n!}{(m+1)!n^n} $                                       \\ \bottomrule
+        \end{tabular}
+        \end{table}
+        
+        From the above table, the scenario that has the highest probability associated with its average is the no repeated number scenario, which has the probability of $ \frac{n!}{n^n} $ .
+        
+        \item
+        
+        \item At each position in the draw, each number has a probability of $ 
+        \frac{1}{n} $ to be placed at that position. Hence, the probability that a number is missing from one particular position in the draw is $ (1-\frac{1}{n}) $. A draw of $ n $ numbers has $ n $ positions. To avoid appearing in any of the $ n $ positions, the probability is $ (1-\frac{1}{n})^n $. According to the definition of $ e $:
+        
+        $$ e = \lim_{n\to\infty} (1 + \frac{1}{n})^n $$
+        
+        $$ e^{-1} = \lim_{n\to\infty} (1 + \frac{1}{n})^{-n} = \lim_{n\to\infty} (\frac{1}{1+\frac{1}{n}})^{n} = \lim_{n\to\infty} (\frac{n}{n+1})^{n} = \lim_{n\to\infty} (\frac{n+1}{n+1} - \frac{1}{n+1})^{n} $$
+        
+        $$ \text{As } n \to\infty, n+1 \to n, \text{therefore} \lim_{n\to\infty} (\frac{n+1}{n+1} - \frac{1}{n+1})^{n} = \lim_{n\to\infty} (1 - \frac{1}{n})^{n} = \lim_{n\to\infty} (1-\frac{1}{n})^n $$ 
+        
+    \end{enumerate}
+    
+    \item
+    
+    \item
+    
+    \item
+    
+    \item \begin{enumerate}
+        \item 
+        
+        \item
+        
+    \end{enumerate}
+    
+\end{enumerate}
+
+\end{document}
