@@ -21,7 +21,7 @@
 \rhead{}
 \lfoot{ECEN 662 Estimation and Detection Theory}
 \cfoot{\thepage}
-\rfoot{@Lei Wang}
+\rfoot{Assignment 1 @Lei Wang}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\headwidth}{\textwidth}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -193,11 +193,12 @@
         \begin{equation*}
             \begin{aligned}
             Var[Y] &= E[Y^2] - E[Y]^2 \\
-            &= E[(a + b X + c X^2)^2] - (a + c) \\
-            &= E[a^2 + a b X + a c X^2 + a b X + b^2 X^2 + b c X^3 + a c X^2 + b c X^3 + c^2 X^4] - (a + c) \\
-            &= a^2 + 0 + ac + 0 + b^2 + 0 + a c + 0 + 3 c^2 - (a + c) \\
-            &= a^2 + 2 a c + b^2 + 3 c^2 - a - c \\
-            \sigma_{Y} &= \sqrt{Var[Y]} = \sqrt{a^2 + 2 a c + b^2 + 3 c^2 - a - c}
+            &= E[(a + b X + c X^2)^2] - (a + c)^2 \\
+            &= E[a^2 + a b X + a c X^2 + a b X + b^2 X^2 + b c X^3 + a c X^2 + b c X^3 + c^2 X^4] - (a + c)^2 \\
+            &= a^2 + 0 + ac + 0 + b^2 + 0 + a c + 0 + 3 c^2 - (a + c)^2 \\
+            &= a^2 + 2 a c + b^2 + 3 c^2 - a^2 - 2 a c - c^2 \\
+            &= b^2 + 2 c^2 \\
+            \sigma_{Y} &= \sqrt{Var[Y]} = \sqrt{b^2 + 2 c^2}
             \end{aligned}
         \end{equation*}
         
@@ -206,10 +207,10 @@
         \begin{equation*}
             \begin{aligned}
                 \rho(X, Y) &= \frac{E[(X - \mu_{X})(Y - \mu_{Y})]}{\sigma_{X}\sigma_{Y}} \\
-                &= \frac{E[X(a + b X + c X^2 - a - c)]}{\sqrt{a^2 + 2 a c + b^2 + 3 c^2 - a - c}} \\
-                &= \frac{E[b X^2 + c X^3 - c X]}{\sqrt{a^2 + 2 a c + b^2 + 3 c^2 - a - c}} \\
-                &= \frac{-c E[X] + b E[X^2] + c E[X^3]}{\sqrt{a^2 + 2 a c + b^2 + 3 c^2 - a - c}} \\
-                &= \frac{b}{\sqrt{a^2 + 2 a c + b^2 + 3 c^2 - a - c}}
+                &= \frac{E[X(a + b X + c X^2 - a - c)]}{\sqrt{b^2 + 2 c^2}} \\
+                &= \frac{E[b X^2 + c X^3 - c X]}{\sqrt{b^2 + 2 c^2}} \\
+                &= \frac{-c E[X] + b E[X^2] + c E[X^3]}{\sqrt{b^2 + 2 c^2}} \\
+                &= \frac{b}{\sqrt{b^2 + 2 c^2}}
             \end{aligned}
         \end{equation*}
         
